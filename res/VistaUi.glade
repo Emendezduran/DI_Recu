@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkBox" id="box_ui">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="margin_left">8</property>
+    <property name="margin_right">8</property>
+    <property name="margin_top">8</property>
+    <property name="margin_bottom">8</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <property name="spacing">8</property>
+    <child>
+      <object class="GtkBox" id="elementos_box">
+        <property name="height_request">200</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">5</property>
+        <property name="margin_bottom">5</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">12</property>
+        <property name="margin_bottom">12</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkButton" id="btn_agregar">
+            <property name="label" translatable="yes">Agregar</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_bottom">10</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+            <signal name="activate" handler="btn_agregar_act" swapped="no"/>
+            <signal name="clicked" handler="btn_agregar_act" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btn_eliminar">
+            <property name="label" translatable="yes">Eliminar</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+            <signal name="activate" handler="btn_eliminar_act" swapped="no"/>
+            <signal name="clicked" handler="btn_eliminar_act" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btn_refrescar">
+            <property name="label" translatable="yes">Refrescar</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_top">10</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+            <signal name="activate" handler="btn_refrescar_act" swapped="no"/>
+            <signal name="clicked" handler="btn_refrescar_act" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btn_volver">
+            <property name="label" translatable="yes">Volver</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_top">292</property>
+            <signal name="activate" handler="btn_volver_act" swapped="no"/>
+            <signal name="clicked" handler="btn_volver_act" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+  </object>
+</interface>
