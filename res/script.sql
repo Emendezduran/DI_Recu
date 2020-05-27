@@ -1,3 +1,6 @@
+-- sqlite pragma
+PRAGMA foreign_keys=1;
+
 create table categorias
 (
     categoria_id     INTEGER not null
@@ -40,3 +43,28 @@ create table productos
 
 create unique index productos_producto_id_uindex
     on productos (producto_id);
+
+insert into categorias
+values (null, 'Limpieza'),
+       (null, 'Verduras'),
+       (null, 'Frutas'),
+       (null, 'Higiene'),
+       (null, 'Boyeria'),
+       (null, 'Bebidas'),
+       (null, 'Bebidas Alcoholicas');
+
+insert into productos
+values (null, 'multiusos', 3, 20, 1),
+       (null, 'patata', 1, 30, 2),
+       (null, 'tomate', 1, 100, 3),
+       (null, 'desodorante rexona', 3, 200, 4),
+       (null, 'donut reyeno', 1, 10, 5),
+       (null, 'Pepsi', 2, 250, 6),
+       (null, 'Ron Santa Teresa', 12, 50, 7);
+
+insert into clientes
+values (null, 'Emilio', 'Perez', 'Gonzalez', '44455566X', 19, 'Pontevedra'),
+       (null, 'Francisco', 'Juarez', 'Santana', '44555667B', 21, 'Pontevedra'),
+       (null, 'Patricio', 'Mendes', 'Taboada', '44355448F', 33, 'Coruña');
+
+
