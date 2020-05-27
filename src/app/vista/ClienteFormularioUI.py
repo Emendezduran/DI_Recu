@@ -1,6 +1,5 @@
 import gi
 
-
 from src.app.modelo.Cliente import Cliente
 
 gi.require_version('Gtk', '3.0')
@@ -23,7 +22,7 @@ class ClienteFormularioUI(Gtk.Window):
         builder = Gtk.Builder()
         builder.add_from_file("/home/emilio/PycharmProjects/DI_Proyecto_Emilio/res/ClienteNuevoUi.glade")
         signals = {
-            "btn_volver_act": self.on_btn_cancelar,
+            "btn_volver_act": self.on_btn_volver,
             "btn_guardar_act": self.on_btn_guardar
         }
         builder.connect_signals(signals)

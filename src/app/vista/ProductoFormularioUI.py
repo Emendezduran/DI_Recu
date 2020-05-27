@@ -1,6 +1,5 @@
 import gi
 
-
 from src.app.modelo.Producto import Producto
 
 gi.require_version('Gtk', '3.0')
@@ -16,14 +15,14 @@ class ProductoFormularioUI(Gtk.Window):
         self.parent = parent
         self.creating: bool = producto is None
         if self.creating:
-            self.producto = Producto('', '', '', '', '', '')
+            self.producto = Producto('', '', '', '', '')
         else:
             self.producto = producto
 
         builder = Gtk.Builder()
-        builder.add_from_file("/home/emilio/PycharmProjects/DI_Proyecto_Emilio/res/ProductoNuevoUI.glade")
+        builder.add_from_file("/home/emilio/PycharmProjects/DI_Proyecto_Emilio/res/ProductoNuevoUi.glade")
         signals = {
-            "btn_volver_act": self.on_btn_cancelar,
+            "btn_volver_act": self.on_btn_volver,
             "btn_guardar_act": self.on_btn_guardar
         }
         builder.connect_signals(signals)
@@ -32,7 +31,7 @@ class ProductoFormularioUI(Gtk.Window):
 
         self.producto_nombre_entry: Gtk.Entry = builder.get_object("producto_nombre_entry")
         self.producto_precio_entry: Gtk.Entry = builder.get_object("producto_precio_entry")
-        self.producto_stock_entry: Gtk.Entry = builder.get_object("field_producto_stock_entry")
+        self.producto_stock_entry: Gtk.Entry = builder.get_object("producto_stock_entry")
         #self.producto_categoria_combo: Gtk.Entry = builder.get_object("producto_categoria_combo")
 
         self.producto_nombre_entry.set_text(self.producto.producto_nombre)
@@ -51,7 +50,7 @@ class ProductoFormularioUI(Gtk.Window):
         """
         self.parent.return_from_child()
 
-    def on_btn_guardar_act(self, button):
+    def on_btn_guardar(self, button):
         """guarda los datos ingresados inicializando e insertando un nuevo objeto
 
         :param button:
