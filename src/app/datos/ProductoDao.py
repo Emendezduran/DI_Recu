@@ -1,5 +1,5 @@
-from src.app.modelo.Producto import Producto
 from src.app.datos import GenericDao
+from src.app.modelo.Producto import Producto
 
 debug: bool = GenericDao.debug
 
@@ -20,7 +20,7 @@ def get_all() -> list:
             print(str(producto))
 
     conn.close()
-    return producto
+    return productos
 
 
 def get_id(idd: int) -> Producto:

@@ -1,6 +1,3 @@
-from src.app.datos import ClienteDao
-
-
 class Cliente:
     """
     Clase modelo Cliente
@@ -28,44 +25,7 @@ class Cliente:
         self.cliente_edad: int = cliente_edad
         self.cliente_provincia: str = cliente_provincia
 
-
-    def insert(self):
-        """
-        insertar en base de datos
-        :param self:
-        :type self:
-        :return: id asignado
-        :rtype: int
-        """
-        return ClienteDao.insert(self)
-
-    def remove(self):
-        """
-        eliminar de la base de datos
-        :param self:
-        :type self:
-        :return: confirmacion de eliminacion
-        :rtype: bool
-        """
-        return ClienteDao.remove(self)
-
-    def update(self):
-        """
-        actualizar la base de datos
-
-        :param self:
-        :type self:
-        :return: confirmacion de actualizacion
-        :rtype: bool
-        """
-        return ClienteDao.update(self)
-
     def __str__(self) -> str:
-        return super().__str__()
-"""
-    def __str__(self) -> str:
-        return 'Cliente { ' + \
-               str(self.idd) + ', ' + \
-               str(self.cliente_id) + ', ' + \
-               str(self.cliente_nombre) + ' };'
-"""
+        return str(
+            self.idd) + ' ' + self.cliente_nombre + ' ' + self.cliente_apellido_1 + ' ' + self.cliente_apellido_2 + ' ' + self.cliente_documento + ' ' + str(
+            self.cliente_edad) + ' ' + self.cliente_provincia

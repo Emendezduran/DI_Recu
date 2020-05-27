@@ -1,6 +1,3 @@
-from src.app.datos import ProductoDao
-
-
 class Producto:
     """
     Clase modelo Producto
@@ -24,36 +21,6 @@ class Producto:
         self.producto_stock: str = producto_stock
         self.producto_categoria: str = producto_categoria
 
-    def insert(self):
-        """
-        insertar en base de datos
-        :param self:
-        :type self:
-        :return: id asignado
-        :rtype: int
-        """
-        return ProductoDao.insert(self)
-
-    def remove(self):
-        """
-        eliminar de la base de datos
-        :param self:
-        :type self:
-        :return: confirmacion de eliminacion
-        :rtype: bool
-        """
-        return ProductoDao.remove(self)
-
-    def update(self):
-        """
-        actualizar la base de datos
-
-        :param self:
-        :type self:
-        :return: confirmacion de actualizacion
-        :rtype: bool
-        """
-        return ProductoDao.update(self)
-
     def __str__(self) -> str:
-        return super().__str__()
+        return str(self.idd) + ' ' + self.producto_nombre + ' ' + str(self.producto_precio) + ' ' + str(
+            self.producto_stock) + ' ' + str(self.producto_categoria)
