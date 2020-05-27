@@ -1,5 +1,5 @@
-from src.app.modelo.Categoria import Categoria
 from src.app.datos import GenericDao
+from src.app.modelo.Categoria import Categoria
 
 debug: bool = GenericDao.debug
 
@@ -103,7 +103,7 @@ def update(categoria: Categoria) -> bool:
     """
     conn = GenericDao.connect()
     cursor = conn.cursor()
-    sql = 'UPDATE categorias SET categoria_id=?, categoria_nombre=?  WHERE id = ?'
+    sql = 'UPDATE categorias SET categoria_id=?, categoria_nombre=?  WHERE categoria_id = ?'
     values = (categoria.categoria_id, categoria.categoria_nombre, categoria.idd)
     cursor.execute(sql, values)
     conn.commit()

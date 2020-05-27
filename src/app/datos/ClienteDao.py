@@ -1,5 +1,5 @@
-from src.app.modelo.Cliente import Cliente
 from src.app.datos import GenericDao
+from src.app.modelo.Cliente import Cliente
 
 debug: bool = GenericDao.debug
 
@@ -108,7 +108,7 @@ def update(cliente: Cliente) -> bool:
     """
     conn = GenericDao.connect()
     cursor = conn.cursor()
-    sql = 'UPDATE clientes SET cliente_id=?, cliente_nombre=?, cliente_apellido_1=?, cliente_apellido_2=?, cliente_documento=?, cliente_edad=?, cliente_provincia=?  WHERE id = ?'
+    sql = 'UPDATE clientes SET cliente_id=?, cliente_nombre=?, cliente_apellido_1=?, cliente_apellido_2=?, cliente_documento=?, cliente_edad=?, cliente_provincia=?  WHERE cliente_id = ?'
     values = (cliente.cliente_id,
               cliente.cliente_nombre,
               cliente.cliente_apellido_1,

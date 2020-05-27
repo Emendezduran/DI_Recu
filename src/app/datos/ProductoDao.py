@@ -32,7 +32,7 @@ def get_id(idd: int) -> Producto:
     :rtype: Producto
     """
     conn = GenericDao.connect()
-    cursor = conn.execute("SELECT * FROM productos where cliente_id = ?", (str(idd),))
+    cursor = conn.execute("SELECT * FROM productos where producto_id = ?", (str(idd),))
     row = cursor.fetchone()
     producto = Producto(row[1], row[2], row[3], row[4], row[0])
     if debug:
@@ -77,7 +77,7 @@ def remove_id(idd: int) -> bool:
     :rtype: bool
     """
     conn = GenericDao.connect()
-    cursor = conn.execute("DELETE FROM productos where cliente_id = ?", (str(idd),))
+    cursor = conn.execute("DELETE FROM productos where producto_id = ?", (str(idd),))
     conn.commit()
     conn.close()
     if debug:
@@ -106,7 +106,7 @@ def update(producto: Producto) -> bool:
     """
     conn = GenericDao.connect()
     cursor = conn.cursor()
-    sql = 'UPDATE clientes SET producto_id=?, producto_nombre=?, producto_precio=?, producto_stock=?, producto_categoria=?  WHERE id = ?'
+    sql = 'UPDATE productos SET producto_id=?, producto_nombre=?, producto_precio=?, producto_stock=?, categoria_id=?  WHERE producto_id = ?'
     values = (producto.producto_id,
               producto.producto_nombre,
               producto.producto_precio,
