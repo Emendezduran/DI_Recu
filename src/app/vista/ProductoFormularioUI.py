@@ -23,6 +23,7 @@ class ProductoFormularioUI(Gtk.Window):
         builder.add_from_file("/home/emilio/PycharmProjects/DI_Proyecto_Emilio/res/ProductoNuevoUi.glade")
         signals = {
             "btn_volver_act": self.on_btn_volver,
+            "btn_limpiar_act": self.on_btn_limpiar,
             "btn_guardar_act": self.on_btn_guardar
         }
         builder.connect_signals(signals)
@@ -61,9 +62,12 @@ class ProductoFormularioUI(Gtk.Window):
         self.producto.producto_nombre = self.producto_nombre_entry.get_text()
         self.producto.producto_precio = int(self.producto_precio_entry.get_text())
         self.producto.producto_stock = int(self.producto_stock_entry.get_text())
-        #self.producto.producto_categoria = self.producto_categoria_combo.get_text()
+        # self.producto.producto_categoria = self.producto_categoria_combo.get_text()
         if self.creating:
             self.producto.insert()
         else:
             self.producto.update()
         self.parent.return_from_child()
+
+    def on_btn_limpiar(self, button):
+        pass

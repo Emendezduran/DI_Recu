@@ -120,8 +120,8 @@ class ClientesUI(Gtk.Box):
         """
         self.set_sensitive(True)
         self.refrescar_tabla()
-        self.editor_ui.destroy()
-        self.editor_ui = None
+        self.formulario_ui.destroy()
+        self.formulario_ui = None
 
     def get_selected_id(self) -> int:
         """retorna el id del objeto seleccionado

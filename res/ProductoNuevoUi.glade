@@ -207,8 +207,8 @@
                     <property name="margin_bottom">10</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">False</property>
-                    <signal name="activate" handler="btn_guardar" swapped="no"/>
-                    <signal name="clicked" handler="btn_guardar" swapped="no"/>
+                    <signal name="activate" handler="btn_guardar_act" swapped="no"/>
+                    <signal name="clicked" handler="btn_guardar_act" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -226,8 +226,8 @@
                     <property name="margin_right">10</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">False</property>
-                    <signal name="activate" handler="btn_limpiar" swapped="no"/>
-                    <signal name="clicked" handler="btn_eliminar" swapped="no"/>
+                    <signal name="activate" handler="btn_limpiar_act" swapped="no"/>
+                    <signal name="clicked" handler="btn_limpiar_act" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -251,8 +251,8 @@
                 <property name="margin_left">10</property>
                 <property name="margin_right">10</property>
                 <property name="margin_top">250</property>
-                <signal name="activate" handler="btn_volver" swapped="no"/>
-                <signal name="clicked" handler="btn_volver" swapped="no"/>
+                <signal name="activate" handler="btn_volver_act" swapped="no"/>
+                <signal name="clicked" handler="btn_volver_act" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>

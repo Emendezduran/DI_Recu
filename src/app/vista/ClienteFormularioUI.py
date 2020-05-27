@@ -23,6 +23,7 @@ class ClienteFormularioUI(Gtk.Window):
         builder.add_from_file("/home/emilio/PycharmProjects/DI_Proyecto_Emilio/res/ClienteNuevoUi.glade")
         signals = {
             "btn_volver_act": self.on_btn_volver,
+            "btn_limpiar_act": self.on_btn_limpiar,
             "btn_guardar_act": self.on_btn_guardar
         }
         builder.connect_signals(signals)
@@ -75,3 +76,6 @@ class ClienteFormularioUI(Gtk.Window):
         else:
             self.cliente.update()
         self.parent.return_from_child()
+
+    def on_btn_limpiar(self, button):
+        pass
