@@ -31,38 +31,36 @@ class ProductosUI(Gtk.Box):
         self.add(self.box_ui)
         self.treeview_container = builder.get_object("elementos_box")
 
-        # # Creating the ListStore model
-        # self.productos_liststore = Gtk.ListStore(int, str, int, int, str)
-        # # self.refrescar_tabla()
-        #
-        # self.treeview = Gtk.TreeView(model=self.productos_liststore)
-        # for i, column_title in enumerate(["ID", "Nombre", "Precio", "Stock", "Categoria"]):
-        #     renderer = Gtk.CellRendererText()
-        #     column = Gtk.TreeViewColumn(column_title, renderer, text=i)
-        #     column.set_resizable(True)
-        #     self.treeview.append_column(column)
-        #
-        # # setting up the layout, putting the treeview in a scrollwindow, and the buttons in a row
-        # self.scrollable_treelist = Gtk.ScrolledWindow()
-        # self.scrollable_treelist.set_vexpand(True)
-        # #self.treeview_container.add(self.scrollable_treelist)
-        # #self.scrollable_treelist.add(self.treeview)
+        # Creating the ListStore model
+        self.productos_liststore = Gtk.ListStore(int, str, int, int, int)
+        self.refrescar_tabla()
+
+        self.treeview = Gtk.TreeView(model=self.productos_liststore)
+        for i, column_title in enumerate(["ID", "Nombre", "Precio", "Stock", "Categoria"]):
+            renderer = Gtk.CellRendererText()
+            column = Gtk.TreeViewColumn(column_title, renderer, text=i)
+            column.set_resizable(True)
+            self.treeview.append_column(column)
+
+        # setting up the layout, putting the treeview in a scrollwindow, and the buttons in a row
+        self.scrollable_treelist = Gtk.ScrolledWindow()
+        self.scrollable_treelist.set_vexpand(True)
+        self.treeview_container.add(self.scrollable_treelist)
+        self.scrollable_treelist.add(self.treeview)
 
         self.show_all()
 
     def refrescar_tabla(self):
-        '''
         """Refresca la tabla de productos buscando en la base de datos"""
         self.productos_liststore.clear()
         productos = ProductoDao.get_all()
         for producto in productos:
-            producto_datos = [producto.producto.idd,
+            producto_datos = [producto.idd,
                               producto.producto_nombre,
                               producto.producto_precio,
                               producto.producto_stock,
                               producto.producto_categoria]
             self.productos_liststore.append(producto_datos)
-        '''
 
     def on_btn_volver(self, button):
         """vuelve a la vista de menu principal
