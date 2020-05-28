@@ -32,7 +32,7 @@ def get_id(idd: int) -> Categoria:
     :rtype: Categoria
     """
     conn = GenericDao.connect()
-    cursor = conn.execute("SELECT * FROM categorias where categoria_id = ?", (str(idd),))
+    cursor = conn.execute('SELECT * FROM categorias where categoria_id = ?', (str(idd),))
     row = cursor.fetchone()
     categoria = Categoria(row[1], row[0])
     if debug:
@@ -40,6 +40,25 @@ def get_id(idd: int) -> Categoria:
 
     conn.close()
     return categoria
+
+
+def get_id_nombre(categoria_nombre: str) -> str:
+    """
+    Busca el id de 1 categoria en la base de datos proporcionando el nombre
+    :param categoria_nombre: nombre de categoria
+    :type categoria: str
+    :return: Categoria, si existe en la base de datos
+    :rtype: Categoria
+    """
+    conn = GenericDao.connect()
+    cursor = conn.execute('SELECT categoria_id FROM categorias where categoria_nombre=?', (categoria_nombre,))
+    row = cursor.fetchone()
+    id_categoria = row[0]
+    if debug:
+        print(str(id_categoria))
+
+    conn.close()
+    return id_categoria
 
 
 def insert(categoria: Categoria) -> int:

@@ -3,7 +3,7 @@ class Producto:
     Clase modelo Producto
     """
 
-    def __init__(self, producto_nombre, producto_precio, producto_stock, producto_categoria, idd=0):
+    def __init__(self, producto_nombre, producto_precio, producto_stock, categoria_id, idd=0):
         """Constructor unico con parametros, un objeto de este tipo se inicializara
         con el id 0 y al ser insertado en sqlite se le asigna un id
 
@@ -11,7 +11,7 @@ class Producto:
         :param producto_nombre:
         :param producto_precio:
         :param producto_stock:
-        :param producto_categoria:
+        :param categoria_id:
         :param idd:
         """
 
@@ -19,7 +19,7 @@ class Producto:
         self.producto_nombre: str = producto_nombre
         self.producto_precio: int = producto_precio
         self.producto_stock: str = producto_stock
-        self.producto_categoria: str = producto_categoria
+        self.producto_categoria: int = categoria_id
 
     def __str__(self) -> str:
         return str(self.idd) + ' ' + self.producto_nombre + ' ' + str(self.producto_precio) + ' ' + str(

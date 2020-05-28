@@ -1,6 +1,7 @@
 import gi
 
 from app.datos import CategoriaDao
+from src.app.datos import ProductoDao
 from src.app.modelo.Producto import Producto
 
 gi.require_version('Gtk', '3.0')
@@ -79,9 +80,22 @@ class ProductoFormularioUI(Gtk.Window):
         self.producto.producto_nombre = self.producto_nombre_entry.get_text()
         self.producto.producto_precio = int(self.producto_precio_entry.get_text())
         self.producto.producto_stock = int(self.producto_stock_entry.get_text())
+
         # self.producto.producto_categoria = self.producto_categoria_combo.get_text()
+        tree_iter_categorias = self.producto_categoria_combo.get_active_iter()
+        if tree_iter_categorias is not None:
+            model = self.producto_categoria_combo.get_model()
+            nombre_combo = model[tree_iter_categorias][0]
+            print(str(nombre_combo))
+            id_categoria = CategoriaDao.get_id_nombre(nombre_combo)
+            print(str(id_categoria))
+        else:
+            id_categoria = None
+
+        self.producto.producto_categoria = id_categoria
+
         if self.creating:
-            self.producto.insert()
+            ProductoDao.insert(self.producto)
         else:
             self.producto.update()
         self.parent.return_from_child()

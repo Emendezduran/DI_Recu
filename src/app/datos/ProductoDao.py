@@ -53,8 +53,8 @@ def insert(producto: Producto) -> int:
     conn = GenericDao.connect()
     cursor = conn.cursor()
 
-    sql = 'INSERT INTO productos(producto_id) VALUES (?)'
-    values = (int(producto.producto_id),
+    sql = 'INSERT INTO productos(producto_id, producto_nombre, producto_precio, producto_stock, categoria_id) VALUES (?,?,?,?,?)'
+    values = (None,
               producto.producto_nombre,
               producto.producto_precio,
               producto.producto_stock,

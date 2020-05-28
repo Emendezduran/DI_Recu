@@ -1,6 +1,5 @@
 from app.datos import CategoriaDao, ClienteDao, ProductoDao
 
-
 def testCategorias():
     list = CategoriaDao.get_all()
     for cat in list:
@@ -19,6 +18,6 @@ def testProductos():
         print(pro)
 
 
-testClientes()
+# testClientes()
 # testCategorias()
-# testProductos()
+testProductos()
