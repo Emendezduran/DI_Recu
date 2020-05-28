@@ -160,7 +160,7 @@
                   <object class="GtkComboBox" id="producto_categoria_combo">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">109</property>
+                    <signal name="changed" handler="cb_cambio_act" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -275,4 +275,5 @@
       </packing>
     </child>
   </object>
+  <object class="GtkListStore" id="liststore1"/>
 </interface>
