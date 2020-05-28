@@ -31,27 +31,27 @@ class ClientesUI(Gtk.Box):
         self.add(self.box_ui)
         self.treeview_container = builder.get_object("elementos_box")
 
-        #     # Creating the ListStore model
-        # #   self.clientes_liststore = Gtk.ListStore(int, str, str, str, str, int, str)
-        #     self.refrescar_tabla()
-        #
-        #     self.treeview = Gtk.TreeView(model=self.clientes_liststore)
-        #     for i, column_title in enumerate(["ID", "Nombre", "1er Apellido", "2do Apellido", "Documento", "Edad", "Provincia"]):
-        #         renderer = Gtk.CellRendererText()
-        #         column = Gtk.TreeViewColumn(column_title, renderer, text=i)
-        #         column.set_resizable(True)
-        #         self.treeview.append_column(column)
-        #
-        #     # setting up the layout, putting the treeview in a scrollwindow, and the buttons in a row
-        #     self.scrollable_treelist = Gtk.ScrolledWindow()
-        #     self.scrollable_treelist.set_vexpand(True)
-        #     self.treeview_container.add(self.scrollable_treelist)
-        #     self.scrollable_treelist.add(self.treeview)
+        # Creating the ListStore model
+        self.clientes_liststore = Gtk.ListStore(int, str, str, str, str, int, str)
+        self.refrescar_tabla()
+
+        self.treeview = Gtk.TreeView(model=self.clientes_liststore)
+        for i, column_title in enumerate(
+                ["ID", "Nombre", "1er Apellido", "2do Apellido", "Documento", "Edad", "Provincia"]):
+            renderer = Gtk.CellRendererText()
+            column = Gtk.TreeViewColumn(column_title, renderer, text=i)
+            column.set_resizable(True)
+            self.treeview.append_column(column)
+
+        # setting up the layout, putting the treeview in a scrollwindow, and the buttons in a row
+        self.scrollable_treelist = Gtk.ScrolledWindow()
+        self.scrollable_treelist.set_vexpand(True)
+        self.treeview_container.add(self.scrollable_treelist)
+        self.scrollable_treelist.add(self.treeview)
 
         self.show_all()
 
     def refrescar_tabla(self):
-        '''
         """Refresca la tabla de clientes buscando en la base de datos"""
         self.clientes_liststore.clear()
         clientes = ClienteDao.get_all()
@@ -64,7 +64,6 @@ class ClientesUI(Gtk.Box):
                              cliente.cliente_edad,
                              cliente.cliente_provincia]
             self.clientes_liststore.append(cliente_datos)
-            '''
 
     def on_btn_volver(self, button):
         """vuelve a la vista de menu principal
