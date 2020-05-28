@@ -3,23 +3,25 @@
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkBox" id="box_ui">
+    <property name="width_request">500</property>
+    <property name="height_request">500</property>
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="margin_left">8</property>
-    <property name="margin_right">8</property>
-    <property name="margin_top">8</property>
-    <property name="margin_bottom">8</property>
+    <property name="halign">center</property>
+    <property name="valign">center</property>
     <property name="hexpand">True</property>
     <property name="vexpand">True</property>
+    <property name="border_width">10</property>
     <property name="spacing">8</property>
     <child>
       <object class="GtkGrid">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">10</property>
-        <property name="margin_top">10</property>
+        <property name="margin_top">75</property>
+        <property name="border_width">10</property>
         <child>
           <object class="GtkLabel" id="cliente_nombre_label">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Nombre</property>
@@ -31,6 +33,7 @@
         </child>
         <child>
           <object class="GtkEntry" id="cliente_nombre_entry">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
           </object>
@@ -41,6 +44,7 @@
         </child>
         <child>
           <object class="GtkLabel" id="cliente_apellido_1_label">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Primer Apellido</property>
@@ -52,9 +56,10 @@
         </child>
         <child>
           <object class="GtkEntry" id="cliente_apellido_1_entry">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_top">10</property>
+            <property name="margin_top">20</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -63,9 +68,9 @@
         </child>
         <child>
           <object class="GtkLabel" id="cliente_apellido_2_label">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_right">20</property>
             <property name="label" translatable="yes">Segundo Apellido</property>
           </object>
           <packing>
@@ -75,9 +80,10 @@
         </child>
         <child>
           <object class="GtkEntry" id="cliente_apellido_2_entry">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_top">10</property>
+            <property name="margin_top">20</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -86,6 +92,7 @@
         </child>
         <child>
           <object class="GtkLabel" id="cliente_documento_label">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Documento</property>
@@ -97,9 +104,10 @@
         </child>
         <child>
           <object class="GtkEntry" id="cliente_documento_entry">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_top">10</property>
+            <property name="margin_top">20</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -108,6 +116,7 @@
         </child>
         <child>
           <object class="GtkLabel" id="cliente_edad_label">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Edad </property>
@@ -119,9 +128,10 @@
         </child>
         <child>
           <object class="GtkEntry" id="cliente_edad_entry">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_top">10</property>
+            <property name="margin_top">20</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -130,6 +140,7 @@
         </child>
         <child>
           <object class="GtkLabel" id="cliente_provincia_label">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Provincia</property>
@@ -141,9 +152,10 @@
         </child>
         <child>
           <object class="GtkEntry" id="cliente_provincia_entry">
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_top">10</property>
+            <property name="margin_top">20</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -159,10 +171,10 @@
     </child>
     <child>
       <object class="GtkBox" id="cliente_acciones_box">
+        <property name="width_request">100</property>
+        <property name="height_request">480</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">10</property>
-        <property name="margin_bottom">10</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkBox">
@@ -219,8 +231,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_right">10</property>
-            <property name="margin_top">250</property>
+            <property name="margin_top">368</property>
             <signal name="activate" handler="btn_volver_act" swapped="no"/>
             <signal name="clicked" handler="btn_volver_act" swapped="no"/>
           </object>
