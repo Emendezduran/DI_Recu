@@ -53,8 +53,8 @@ def insert(cliente: Cliente) -> int:
     conn = GenericDao.connect()
     cursor = conn.cursor()
 
-    sql = 'INSERT INTO clientes(cliente_id) VALUES (?)'
-    values = (int(cliente.cliente_id),
+    sql = 'INSERT INTO clientes(cliente_id, cliente_nombre, cliente_apellido_1, cliente_apellido_2, cliente_documento, cliente_edad, cliente_provincia) VALUES (?,?,?,?,?,?,?)'
+    values = (None,
               cliente.cliente_nombre,
               cliente.cliente_apellido_1,
               cliente.cliente_apellido_2,
@@ -144,5 +144,3 @@ def get_clientes_provincia(provincia: str) -> list:
             print(str(cliente))
     conn.close()
     return clientes
-
-

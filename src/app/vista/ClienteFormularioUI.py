@@ -1,5 +1,6 @@
 import gi
 
+from app.datos import ClienteDao
 from src.app.modelo.Cliente import Cliente
 
 gi.require_version('Gtk', '3.0')
@@ -72,7 +73,7 @@ class ClienteFormularioUI(Gtk.Window):
         self.cliente.cliente_edad = int(self.cliente_edad_entry.get_text())
         self.cliente.cliente_provincia = self.cliente_provincia_entry.get_text()
         if self.creating:
-            self.cliente.insert()
+            ClienteDao.insert(self.cliente)
         else:
             self.cliente.update()
         self.parent.return_from_child()

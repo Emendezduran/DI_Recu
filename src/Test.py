@@ -19,6 +19,6 @@ def testProductos():
         print(pro)
 
 
-testCategorias()
 testClientes()
-testProductos()
+# testCategorias()
+# testProductos()
