@@ -125,22 +125,18 @@ def update(cliente: Cliente) -> bool:
     return cursor.rowcount > 0
 
 
-def get_clientes_provincia(provincia: str) -> list:
+def get_clientes_provincia() -> list:
     """
-    Genera una lista con todos los clientes de la provincia seleccionado
-    :param provincia: provincia
-    :type provincia: str
+    Genera una lista de provincias con el numero de clientes que hay por cada una
     :return: lista de Clientes filtrados por provincia
-    :rtype: list<Cliente>
+    :rtype: list
     """
-    clientes = []
+    provincias = []
     conn = GenericDao.connect()
-    sql = "SELECT * FROM clientes where cliente_provincia = ?"
-    cursor = conn.execute(sql, provincia)
+    sql = "SELECT cliente_provincia, count(cliente_provincia) FROM clientes GROUP BY cliente_provincia"
+    cursor = conn.execute(sql)
     for row in cursor:
-        cliente = Cliente(row[1], row[2], row[3], row[4], row[5], row[6], row[0])
-        clientes.append(cliente)
-        if debug:
-            print(str(cliente))
+        fila = row[0] + " - Nº clientes: " + str(row[1])
+        provincias.append(fila)
     conn.close()
-    return clientes
+    return provincias

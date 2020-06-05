@@ -1,10 +1,8 @@
 import gi
 
-from src import app
-
+from app.reportes import Reportes_script
 from src.app.vista.ClientesUI import ClientesUI
 from src.app.vista.ProductosUI import ProductosUI
-
 
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
@@ -29,24 +27,34 @@ class MainUI(Gtk.Window):
         signals = {
             "btn_clientes_act": self.on_btn_clientes,
             "btn_productos_act": self.on_btn_productos,
-            "btn_reportes_act": self.on_btn_reportes,
+            "btn_reportes_act_1": self.on_btn_reportes_1,
+            "btn_reportes_act_2": self.on_btn_reportes_2,
         }
         builder.connect_signals(signals)
         self.show_all()
         self.connect("destroy", Gtk.main_quit)
 
-    def on_btn_reportes(self, button):
-        '''
+    def on_btn_reportes_1(self, button):
+
         """
-        abre el menu de reportes
+        genera el reporte de productos con stock inferior a 12
         :param button:
         :type button:
         :return:
         :rtype:
         """
-        reportes_ui = ReportesUI(self)
-        self.set_active_pane(reportes_ui)
-        '''
+        Reportes_script.reporte_stock_minimo()
+
+    def on_btn_reportes_2(self, button):
+
+        """
+        genera el reporte del numero de clientes por provincia
+        :param button:
+        :type button:
+        :return:
+        :rtype:
+        """
+        Reportes_script.reporte_provincias()
 
     def on_btn_clientes(self, button):
         """

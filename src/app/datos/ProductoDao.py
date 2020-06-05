@@ -131,8 +131,8 @@ def get_productos_stock(stock: int) -> list:
     """
     productos = []
     conn = GenericDao.connect()
-    sql = "SELECT * FROM productos where producto_stock <= ?"
-    cursor = conn.execute(sql, stock)
+    sql = 'SELECT * FROM productos where producto_stock <=' + str(stock)
+    cursor = conn.execute(sql)
     for row in cursor:
         producto = Producto(row[1], row[2], row[3], row[4], row[0])
         productos.append(producto)

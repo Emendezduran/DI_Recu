@@ -15,12 +15,20 @@
     <property name="orientation">vertical</property>
     <property name="spacing">8</property>
     <child>
-      <object class="GtkLabel">
+      <object class="GtkLabel" id="lbl_menu">
+        <property name="name">lbl_menu</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">10</property>
-        <property name="margin_bottom">40</property>
+        <property name="margin_left">200</property>
+        <property name="margin_right">200</property>
+        <property name="margin_top">40</property>
+        <property name="margin_bottom">20</property>
         <property name="label" translatable="yes">Menu Principal</property>
+        <attributes>
+          <attribute name="font-desc" value="URW Bookman L Bold 10"/>
+          <attribute name="weight" value="ultrabold"/>
+          <attribute name="scale" value="2"/>
+        </attributes>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -34,8 +42,8 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
-        <property name="margin_left">200</property>
-        <property name="margin_right">200</property>
+        <property name="margin_left">280</property>
+        <property name="margin_right">280</property>
         <property name="hexpand">True</property>
         <signal name="activate" handler="btn_clientes_act" swapped="no"/>
         <signal name="clicked" handler="btn_clientes_act" swapped="no"/>
@@ -52,9 +60,9 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
-        <property name="margin_left">200</property>
-        <property name="margin_right">200</property>
-        <property name="margin_top">10</property>
+        <property name="margin_left">280</property>
+        <property name="margin_right">280</property>
+        <property name="margin_top">15</property>
         <property name="hexpand">True</property>
         <signal name="activate" handler="btn_productos_act" swapped="no"/>
         <signal name="clicked" handler="btn_productos_act" swapped="no"/>
@@ -66,22 +74,61 @@
       </packing>
     </child>
     <child>
-      <object class="GtkButton" id="btn_reportes">
-        <property name="label" translatable="yes">Reportes</property>
+      <object class="GtkLabel" id="lbl_reportes">
+        <property name="name">lbl_reportes</property>
         <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">True</property>
+        <property name="can_focus">False</property>
         <property name="margin_left">200</property>
         <property name="margin_right">200</property>
-        <property name="margin_top">250</property>
-        <property name="hexpand">True</property>
-        <signal name="activate" handler="btn_reportes_act" swapped="no"/>
-        <signal name="clicked" handler="btn_reportes_act" swapped="no"/>
+        <property name="margin_top">120</property>
+        <property name="label" translatable="yes">Generar Reportes</property>
+        <attributes>
+          <attribute name="font-desc" value="URW Bookman L Bold 10"/>
+          <attribute name="scale" value="1"/>
+        </attributes>
       </object>
       <packing>
         <property name="expand">False</property>
         <property name="fill">True</property>
         <property name="position">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="btn_reportes_1">
+        <property name="label" translatable="yes">Stock inferior a 12</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="margin_left">280</property>
+        <property name="margin_right">280</property>
+        <property name="margin_top">10</property>
+        <property name="hexpand">True</property>
+        <signal name="activate" handler="btn_reportes_act_1" swapped="no"/>
+        <signal name="clicked" handler="btn_reportes_act_1" swapped="no"/>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">4</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="btn_reportes_2">
+        <property name="label" translatable="yes">Nº de clientes por provincia</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="margin_left">280</property>
+        <property name="margin_right">280</property>
+        <property name="margin_top">15</property>
+        <property name="hexpand">True</property>
+        <signal name="activate" handler="btn_reportes_act_2" swapped="no"/>
+        <signal name="clicked" handler="btn_reportes_act_2" swapped="no"/>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">5</property>
       </packing>
     </child>
   </object>
